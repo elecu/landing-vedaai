@@ -264,20 +264,20 @@ main{
 
 /* Synonyms */
 .av-synonyms .av-block-body{
-  font-size:0.9rem; line-height:2.1; color:var(--text);
+  font-size:0.9em; line-height:2.1; color:var(--text);
 }
 .syn-word{font-style:italic; font-weight:bold; color:var(--syn-word)}
 .syn-sep{color:var(--text2); margin:0 2px}
 
 /* Translation */
 .av-translation .av-block-body p{
-  font-style:italic; font-size:1.02rem; line-height:1.9;
+  font-style:italic; font-size:1.02em; line-height:1.9;
   color:var(--text);
 }
 
 /* Purport */
 .av-purport .av-block-body p{
-  font-size:0.96rem; margin-bottom:12px;
+  font-size:0.96em; margin-bottom:12px;
   text-align:var(--justify, justify); color:var(--text);
 }
 
@@ -828,17 +828,10 @@ h3.home-desc-es.show, h3.home-desc-en.show{ display:block; }
   <button class="btn-view active" id="vbtn-advanced" onclick="setView('advanced')">Vista completa</button>
   <button class="metrics-btn" onclick="toggleMetrics()" title="Métricas del pipeline">📊 Métricas</button>
   <a href="data/brahma-samhita.epub"
-     download="brahma_samhita_es.epub"
+     download="brahma-samhita.epub"
      title="Descargar EPUB en español"
-     style="font-size:0.72rem;color:var(--text2);text-decoration:none;padding:4px 8px;opacity:0.55;transition:opacity 0.15s;"
-     onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.55'">&#8595; epub</a>
-  <a href="data/brahma-samhita.epub"
-     download="brahma_samhita_es.epub"
-     title="Descargar versión EPUB en español"
-     style="font-size:0.72rem;color:var(--text2);text-decoration:none;padding:4px 8px;
-            opacity:0.6;transition:opacity 0.15s;"
-     onmouseover="this.style.opacity='1'"
-     onmouseout="this.style.opacity='0.6'">⬇ epub</a>
+     style="font-size:0.72rem;color:var(--text2);text-decoration:none;padding:4px 8px;opacity:0.6;transition:opacity 0.15s;"
+     onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.6'">⬇ epub</a>
 </div>
 
 <!-- TOC -->
@@ -978,8 +971,8 @@ const METRICS = {
   claude:   0.2,   // Claude Sonnet 4.6 revisión final (% palabras)
 };
 const METRICS_LABELS = {
-  mbart:    'mBART (sin modificar)',
-  glosario: 'Glosario forzado',
+  mbart:    'mBART fine-tuned (corpus Bhagavatam)',
+  glosario: 'Glosario',
   gemini:   'Gemini 2.0 Flash Preview',
   human:    'Corrección humana',
   claude:   'Claude Sonnet 4.6',
@@ -1127,12 +1120,12 @@ showPage('home');
   <h4>Pipeline de traducción</h4>
   <p style="font-size:0.75rem;color:var(--text2);margin-bottom:12px;">% sobre 29,232 palabras en español</p>
   <div class="metric-row">
-    <span class="metric-label">mBART (sin modificar)</span>
+    <span class="metric-label">mBART fine-tuned (corpus Bhagavatam)</span>
     <div class="metric-bar-wrap"><div class="metric-bar" id="bar-mbart" style="width:0%"></div></div>
     <span class="metric-val" id="val-mbart">—</span>
   </div>
   <div class="metric-row">
-    <span class="metric-label">Glosario forzado</span>
+    <span class="metric-label">Glosario</span>
     <div class="metric-bar-wrap"><div class="metric-bar" id="bar-glosario" style="width:0%"></div></div>
     <span class="metric-val" id="val-glosario">—</span>
   </div>
@@ -1151,7 +1144,7 @@ showPage('home');
     <div class="metric-bar-wrap"><div class="metric-bar" id="bar-claude" style="width:0%"></div></div>
     <span class="metric-val" id="val-claude">—</span>
   </div>
-  <p class="metric-note">Modelos: facebook/mbart-large-50 · Gemini 2.0 Flash Preview · claude-sonnet-4-6<br>Total: 186 segmentos · 29,232 palabras</p>
+  <p class="metric-note">mbart-large-50-many-to-many-mmt fine-tuned corpus Bhagavatam EN/ES · Gemini 2.0 Flash Preview · claude-sonnet-4-6<br>186 segmentos · 29,232 palabras</p>
 </div>
 </body>
 </html>
